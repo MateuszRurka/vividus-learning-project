@@ -1,14 +1,7 @@
 Description: Login into an existing user account. Add a movie into a watchlist, sort the watchlist and export it.
 
 Scenario: Login in.
-Given I am on a page with the URL 'https://www.imdb.com/'
-When I wait until element located `By.xpath(//*[@class="ipc-button__text"][text()="Sign In"])` appears
-When I click on element located `By.xpath(//*[@class="ipc-button__text"][text()="Sign In"])`
-When I wait until element located `By.xpath(//*[@class="auth-provider-text"][text()="Sign in with IMDb"])` appears
-When I click on element located `By.xpath(//*[@class="auth-provider-text"][text()="Sign in with IMDb"])`
-When I enter `wry74954@nezid.com` in field located `By.xpath(//input[@name="email"])`
-When I enter `wry74954@nezid.com` in field located `By.xpath(//input[@name="password"])`
-When I click on element located `By.xpath(//input[@type="submit"])`
+When I login to IMDB with <email> and <password>
 
 Scenario: Search a movie and add it to watchlist.
 When I enter `Interstellar` in field located `By.xpath(//*[@id="suggestion-search"])`

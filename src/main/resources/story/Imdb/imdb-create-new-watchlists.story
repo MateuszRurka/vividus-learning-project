@@ -1,16 +1,13 @@
 Description: Login into an existing user account. Go to the watchlist page and create 5 new watchlists.
 
+Lifecycle:
+Examples:
+{transformer=FROM_LANDSCAPE}
+|email	 |wry74954@nezid.com|
+|password|wry74954@nezid.com|
+
 Scenario: Login in.
-Given I am on a page with the URL 'https://www.imdb.com/'
-When I wait until element located `By.xpath(//*[@class="ipc-button__text"][text()="Sign In"])` appears
-When I click on element located `By.xpath(//*[@class="ipc-button__text"][text()="Sign In"])`
-When I wait until element located `By.xpath(//*[@class="auth-provider-text"][text()="Sign in with IMDb"])` appears
-When I execute steps:
-|step																										|
-|When I click on element located `By.xpath(//*[@class="auth-provider-text"][text()="Sign in with IMDb"])`	|
-|When I enter `wry74954@nezid.com` in field located `By.xpath(//*[@name="email"])`							|
-|When I enter `wry74954@nezid.com` in field located `By.xpath(//*[@name="password"])`						|
-|When I click on element located `By.xpath(//input[@type="submit"])`										|
+When I login to IMDB with <email> and <password>
 
 Scenario: Go to the watchlist page and create new watchlists.
 When I click on element located `By.xpath(//a/*[text()="Watchlist"])`
